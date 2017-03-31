@@ -1,22 +1,20 @@
 #!/usr/bin/env python
-"""Example usage of terminaltables with colorclass.
-
-Just prints sample text and exits.
+"""
+I'll be without phone for couple of weeks, So it was hard to lookup
+my bus schedule using WinnipegTransit website.
+So, I decided to have my own version terminal base route 55 schedule printed.
+Using terminaltables and colorclass.
 """
 
 from __future__ import print_function
-
 from colorclass import Color, Windows
-
 from terminaltables import SingleTable
 
-
-
 def route55_bus_schedule():
-    """Return table string to be printed."""
+    """Return table with 3 column "BUS | AM | PM" """
     table_data = [
         [Color('Bus NO#'), Color('{red}Morning AM{/red}'), Color('{yellow}Afternoon PM{/yellow}')],
-				[Color('{green}55 @ Morrow{/green}'), Color('07:28')	,Color('{red}01:06{/red}')],
+        [Color('{green}55 @ Morrow{/green}'), Color('07:28')	,Color('{red}01:06{/red}')],
 				[Color('{green}55 @ Morrow{/green}'), Color('07:45')	,Color('{red}01:26{/red}')],
 				[Color('{green}55 @ Morrow{/green}'), Color('07:34')	,Color('{red}01:45{/red}')],
 				[Color('{green}55 @ Morrow{/green}'), Color('07:54')	,Color('{red}01:05{/red}')],
@@ -53,8 +51,7 @@ def route55_bus_schedule():
 				[Color('{green}55 @ Morrow{/green}'), Color('') ,Color('{red}10:37{/red}')],
 				[Color('{green}55 @ Morrow{/green}'), Color('') ,Color('{red}11:02{/red}')],
 				[Color('{green}55 @ Morrow{/green}'), Color('') ,Color('{red}11:28{/red}')],
-
-    ]
+				]
     table_instance = SingleTable(table_data, '55 Bus TimeTable LOl')
     table_instance.inner_heading_row_border = False
     table_instance.inner_row_border = True
